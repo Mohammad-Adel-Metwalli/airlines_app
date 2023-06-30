@@ -9,12 +9,12 @@ class SignAuthenticationViewBackGroundImage extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Center(
-      child: FadeInImage(
-        image: AssetImage(image),
-        fit: BoxFit.cover,
+      child: Image.asset(
+        image,
         height: double.infinity,
         width: double.infinity,
-        placeholder: AssetImage(image),
+        fit: BoxFit.cover,
+        // placeholder: AssetImage(image),
       ),
     );
   }
