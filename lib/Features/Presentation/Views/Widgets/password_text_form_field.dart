@@ -29,6 +29,14 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField>
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.sizeOf(context).width * 0.03),
       child: TextFormField(
+        validator: (data)
+        {
+          if(data!.isEmpty)
+          {
+            return 'Field is required';
+          }
+          return null;
+        },
         onChanged: (data)
         {
           CustomSignUpButton.password = data;
@@ -36,6 +44,7 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField>
         },
         obscureText: !obscureText,
         decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
             prefixIcon: const Icon(FontAwesomeIcons.lock, color: Colors.black, size: 25),
             label: Text('password', style: widget.textStyleOfForm),
 

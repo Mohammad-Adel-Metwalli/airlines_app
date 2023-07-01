@@ -10,6 +10,7 @@ class SignUpViewFormItems extends StatefulWidget
 {
   const SignUpViewFormItems({super.key});
 
+
   @override
   State<SignUpViewFormItems> createState() => _SignUpViewFormItemsState();
 }
@@ -19,34 +20,41 @@ class _SignUpViewFormItemsState extends State<SignUpViewFormItems>
   final textStyleOfForm = const TextStyle(fontSize: 15, color: carmine);
   final textStyleOfFormButton = const TextStyle(fontSize: 20, color: babyPowder);
   bool obscure = false;
+  GlobalKey<FormState> keyForm = GlobalKey();
 
   @override
   Widget build(BuildContext context)
   {
-    return Column(
-      children: [
-        const Text('Sign Up', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    return Form(
+      key: keyForm,
 
-        const SizedBox(height: 40),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const Text('Sign Up', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
 
-        UserNameTextFormField(textStyleOfForm: textStyleOfForm),
+            const SizedBox(height: 40),
 
-        SizedBox(height: MediaQuery.sizeOf(context).height * 0.02),
+            UserNameTextFormField(textStyleOfForm: textStyleOfForm),
 
-        EmailTextFormField(textStyleOfForm: textStyleOfForm),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.02),
 
-        SizedBox(height: MediaQuery.sizeOf(context).height * 0.02),
+            EmailTextFormField(textStyleOfForm: textStyleOfForm),
 
-        PasswordTextFormField(obscure: obscure, textStyleOfForm: textStyleOfForm),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.02),
 
-        SizedBox(height: MediaQuery.sizeOf(context).height * 0.05),
+            PasswordTextFormField(obscure: obscure, textStyleOfForm: textStyleOfForm),
 
-        CustomSignUpButton(textStyleOfFormButton: textStyleOfFormButton),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.05),
 
-        SizedBox(height: MediaQuery.sizeOf(context).height * 0.04),
+            CustomSignUpButton(textStyleOfFormButton: textStyleOfFormButton, formKey: keyForm),
 
-        BottomOfSignUpForm(textStyleOfForm: textStyleOfForm)
-      ],
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.04),
+
+            BottomOfSignUpForm(textStyleOfForm: textStyleOfForm)
+          ],
+        ),
+      ),
     );
   }
 }

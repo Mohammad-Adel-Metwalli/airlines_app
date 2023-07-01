@@ -17,11 +17,22 @@ class UserNameTextFormField extends StatelessWidget
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.sizeOf(context).width * 0.03),
       child: TextFormField(
+        validator: (data)
+        {
+          if (data!.isEmpty)
+          {
+            return 'Field is required';
+          }
+
+          return null;
+        },
         onChanged: (data)
         {
           CustomSignUpButton.username = data;
         },
+
         decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
             prefixIcon: const Icon(FontAwesomeIcons.userCircle, color: Colors.black, size: 25),
             label: Text('username', style: textStyleOfForm),
             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),

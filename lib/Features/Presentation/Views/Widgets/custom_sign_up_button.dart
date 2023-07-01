@@ -1,15 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import '../../../../constants.dart';
 
 class CustomSignUpButton extends StatefulWidget
 {
   const CustomSignUpButton({
     super.key,
-    required this.textStyleOfFormButton,
+    required this.textStyleOfFormButton, required this.formKey,
   });
 
   final TextStyle textStyleOfFormButton;
+  final GlobalKey<FormState> formKey;
   static String username = '';
   static String email = '';
   static String password = '';
@@ -51,26 +52,30 @@ class _CustomSignUpButtonState extends State<CustomSignUpButton> with SingleTick
     return GestureDetector(
       onTap: ()
       {
-        showDialog(context: context, builder: (context)
+        if(widget.formKey.currentState!.validate())
         {
-          return Dialog(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-            child: SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.2,
-              child: Lottie.asset(
-                  'Assets/animations/96245-success.json',
-                  animate: true,
-                  height: 200,
-                  controller: controller,
-                  onLoaded: (composition)
-                  {
-                    controller.duration = composition.duration;
-                    controller.forward();
-                  }
-              ),
-            ),
-          );
-        });
+          signUpUser(context);
+
+          /*showDialog(
+              builder: (context)
+              {
+                return Dialog(
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                  child: SizedBox(
+                    height: MediaQuery.sizeOf(context).height * 0.2,
+                    child: Lottie.asset('Assets/animations/Network Error.json',
+                        animate: true,
+                        height: 200,
+                        controller: controller, onLoaded: (composition) {
+                      controller.duration = composition.duration;
+                      controller.forward();
+                    }),
+                  ),
+                );
+              },
+              context: context
+          );*/
+        }
       },
 
       child: Container(
@@ -80,5 +85,11 @@ class _CustomSignUpButtonState extends State<CustomSignUpButton> with SingleTick
         child: Center(child: Text('Sign Up', style: widget.textStyleOfFormButton)),
       ),
     );
+  }
+
+  Future<void> signUpUser(BuildContext context) async
+  {
+    final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: CustomSignUpButton.email, password: CustomSignUpButton.password);
+    print('Hola');
   }
 }

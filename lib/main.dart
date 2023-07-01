@@ -1,10 +1,14 @@
-
 import 'package:airlines_app/Core/Utils/app_router.dart';
 import 'package:airlines_app/Core/Utils/assets_data.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main()
+import 'firebase_options.dart';
+
+void main() async
 {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const AirLinesApp());
 }
 

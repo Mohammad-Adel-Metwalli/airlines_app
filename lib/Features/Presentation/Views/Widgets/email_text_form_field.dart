@@ -18,12 +18,22 @@ class EmailTextFormField extends StatelessWidget
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.sizeOf(context).width * 0.03),
       child: TextFormField(
-        onChanged: (data)
+        validator: (data)
         {
+          if (data!.isEmpty)
+          {
+            return 'Field is required';
+          }
+
+          return null;
+        },
+        onChanged: (data)
+          {
           CustomSignUpButton.email = data;
           CustomLogInButton.email = data;
         },
         decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
             prefixIcon: const Icon(FontAwesomeIcons.userTie, color: Colors.black, size: 25),
             label: Text('email', style: textStyleOfForm),
             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
