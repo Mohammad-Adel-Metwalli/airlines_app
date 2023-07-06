@@ -1,15 +1,15 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../../../../Core/Utils/Functions/sign_up_user_function.dart';
+import '../../../../Core/Utils/styles.dart';
 import '../../../../constants.dart';
 
 class CustomSignUpButton extends StatefulWidget
 {
   const CustomSignUpButton({
     super.key,
-    required this.textStyleOfFormButton, required this.formKey,
+    required this.formKey,
   });
 
-  final TextStyle textStyleOfFormButton;
   final GlobalKey<FormState> formKey;
   static String username = '';
   static String email = '';
@@ -50,46 +50,20 @@ class _CustomSignUpButtonState extends State<CustomSignUpButton> with SingleTick
   Widget build(BuildContext context)
   {
     return GestureDetector(
-      onTap: ()
+      onTap: () async
       {
         if(widget.formKey.currentState!.validate())
         {
           signUpUser(context);
-
-          /*showDialog(
-              builder: (context)
-              {
-                return Dialog(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                  child: SizedBox(
-                    height: MediaQuery.sizeOf(context).height * 0.2,
-                    child: Lottie.asset('Assets/animations/Network Error.json',
-                        animate: true,
-                        height: 200,
-                        controller: controller, onLoaded: (composition) {
-                      controller.duration = composition.duration;
-                      controller.forward();
-                    }),
-                  ),
-                );
-              },
-              context: context
-          );*/
         }
       },
 
       child: Container(
         height: MediaQuery.sizeOf(context).height * 0.06,
         width: MediaQuery.sizeOf(context).height * 0.2,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: carmine),
-        child: Center(child: Text('Sign Up', style: widget.textStyleOfFormButton)),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Constants.carmine),
+        child: const Center(child: Text('Sign Up', style: Styles.textStyleOfFormButton)),
       ),
     );
-  }
-
-  Future<void> signUpUser(BuildContext context) async
-  {
-    final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: CustomSignUpButton.email, password: CustomSignUpButton.password);
-    print('Hola');
   }
 }

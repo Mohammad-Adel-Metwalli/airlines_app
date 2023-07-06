@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+import '../../../../Core/Utils/Functions/log_in_user_function.dart';
+import '../../../../Core/Utils/styles.dart';
 import '../../../../constants.dart';
 
 class CustomLogInButton extends StatefulWidget
 {
   const CustomLogInButton({
     super.key,
-    required this.textStyleOfFormButton,
+    required this.formKey,
   });
 
-  final TextStyle textStyleOfFormButton;
+  final GlobalKey<FormState> formKey;
   static String email = '';
   static String password = '';
+
 
   @override
   State<CustomLogInButton> createState() => _CustomLogInButtonState();
@@ -19,30 +21,7 @@ class CustomLogInButton extends StatefulWidget
 
 class _CustomLogInButtonState extends State<CustomLogInButton> with SingleTickerProviderStateMixin
 {
-  late AnimationController controller;
-
-  @override
-  void initState()
-  {
-    super.initState();
-    controller = AnimationController(vsync: this);
-
-    controller.addStatusListener((status)
-    {
-      if(status == AnimationStatus.completed)
-      {
-        Navigator.of(context).pop();
-        controller.reset();
-      }
-    });
-  }
-
-  @override
-  void dispose()
-  {
-    controller.dispose();
-    super.dispose();
-  }
+  bool checkIsExist = true;
 
   @override
   Widget build(BuildContext context)
@@ -50,33 +29,17 @@ class _CustomLogInButtonState extends State<CustomLogInButton> with SingleTicker
     return GestureDetector(
       onTap: ()
       {
-        showDialog(context: context, builder: (context)
+        if (widget.formKey.currentState!.validate())
         {
-          return Dialog(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-            child: SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.2,
-              child: Lottie.asset(
-                  'Assets/animations/96245-success.json',
-                  animate: true,
-                  height: 200,
-                  controller: controller,
-                  onLoaded: (composition)
-                  {
-                    controller.duration = composition.duration;
-                    controller.forward();
-                  }
-              ),
-            ),
-          );
-        });
+          logInUser(context);
+        }
       },
 
       child: Container(
         height: MediaQuery.sizeOf(context).height * 0.06,
         width: MediaQuery.sizeOf(context).height * 0.2,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: carmine),
-        child: Center(child: Text('Log In', style: widget.textStyleOfFormButton)),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Constants.carmine),
+        child: const Center(child: Text('Log In', style: Styles.textStyleOfFormButton)),
       ),
     );
   }

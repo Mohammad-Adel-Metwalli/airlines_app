@@ -14,8 +14,8 @@ class SignUpViewBody extends StatefulWidget
 
 class _SignUpViewBodyState extends State<SignUpViewBody>
 {
-  final textStyleOfForm = const TextStyle(fontSize: 15, color: carmine);
-  final textStyleOfFormButton = const TextStyle(fontSize: 20, color: babyPowder);
+  final textStyleOfForm = const TextStyle(fontSize: 15, color: Constants.carmine);
+  final textStyleOfFormButton = const TextStyle(fontSize: 20, color: Constants.babyPowder);
 
   @override
   void didChangeDependencies()

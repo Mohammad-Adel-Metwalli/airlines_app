@@ -1,14 +1,10 @@
+import 'package:airlines_app/Core/Utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BottomOfSignUpForm extends StatelessWidget
 {
-  const BottomOfSignUpForm({
-    super.key,
-    required this.textStyleOfForm,
-  });
-
-  final TextStyle textStyleOfForm;
+  const BottomOfSignUpForm({super.key,});
 
   @override
   Widget build(BuildContext context)
@@ -22,9 +18,9 @@ class BottomOfSignUpForm extends StatelessWidget
         GestureDetector(
             onTap: ()
             {
-              GoRouter.of(context).pop();
+              GoRouter.of(context).replace('/');
             },
-            child: Text('Log In', style: textStyleOfForm)
+            child: const Text('Log In', style: Styles.textStyleOfForm)
         ),
 
         const Spacer()

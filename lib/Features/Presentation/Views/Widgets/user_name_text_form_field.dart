@@ -2,14 +2,11 @@ import 'package:airlines_app/Features/Presentation/Views/Widgets/custom_sign_up_
 import 'package:awesome_icons/awesome_icons.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../Core/Utils/styles.dart';
+
 class UserNameTextFormField extends StatelessWidget
 {
-  const UserNameTextFormField({
-    super.key,
-    required this.textStyleOfForm,
-  });
-
-  final TextStyle textStyleOfForm;
+  const UserNameTextFormField({super.key,});
 
   @override
   Widget build(BuildContext context)
@@ -34,7 +31,7 @@ class UserNameTextFormField extends StatelessWidget
         decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
             prefixIcon: const Icon(FontAwesomeIcons.userCircle, color: Colors.black, size: 25),
-            label: Text('username', style: textStyleOfForm),
+            label: const Text('username', style: Styles.textStyleOfForm),
             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
             focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25))
         ),

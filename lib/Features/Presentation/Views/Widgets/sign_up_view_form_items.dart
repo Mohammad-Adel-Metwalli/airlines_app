@@ -17,8 +17,8 @@ class SignUpViewFormItems extends StatefulWidget
 
 class _SignUpViewFormItemsState extends State<SignUpViewFormItems>
 {
-  final textStyleOfForm = const TextStyle(fontSize: 15, color: carmine);
-  final textStyleOfFormButton = const TextStyle(fontSize: 20, color: babyPowder);
+  final textStyleOfForm = const TextStyle(fontSize: 15, color: Constants.carmine);
+  final textStyleOfFormButton = const TextStyle(fontSize: 20, color: Constants.babyPowder);
   bool obscure = false;
   GlobalKey<FormState> keyForm = GlobalKey();
 
@@ -27,7 +27,6 @@ class _SignUpViewFormItemsState extends State<SignUpViewFormItems>
   {
     return Form(
       key: keyForm,
-
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -35,23 +34,23 @@ class _SignUpViewFormItemsState extends State<SignUpViewFormItems>
 
             const SizedBox(height: 40),
 
-            UserNameTextFormField(textStyleOfForm: textStyleOfForm),
+            const UserNameTextFormField(),
 
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.02),
 
-            EmailTextFormField(textStyleOfForm: textStyleOfForm),
+            const EmailTextFormField(),
 
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.02),
 
-            PasswordTextFormField(obscure: obscure, textStyleOfForm: textStyleOfForm),
+            PasswordTextFormField(obscure: obscure),
 
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.05),
 
-            CustomSignUpButton(textStyleOfFormButton: textStyleOfFormButton, formKey: keyForm),
+            CustomSignUpButton(formKey: keyForm),
 
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.04),
 
-            BottomOfSignUpForm(textStyleOfForm: textStyleOfForm)
+            const BottomOfSignUpForm()
           ],
         ),
       ),

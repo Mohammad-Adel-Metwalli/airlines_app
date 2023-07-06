@@ -2,15 +2,12 @@ import 'package:airlines_app/Features/Presentation/Views/Widgets/custom_log_in_b
 import 'package:airlines_app/Features/Presentation/Views/Widgets/custom_sign_up_button.dart';
 import 'package:awesome_icons/awesome_icons.dart';
 import 'package:flutter/material.dart';
+import '../../../../Core/Utils/styles.dart';
 
 class EmailTextFormField extends StatelessWidget
 {
-  const EmailTextFormField({
-    super.key,
-    required this.textStyleOfForm,
-  });
+  const EmailTextFormField({super.key,});
 
-  final TextStyle textStyleOfForm;
 
   @override
   Widget build(BuildContext context)
@@ -28,14 +25,14 @@ class EmailTextFormField extends StatelessWidget
           return null;
         },
         onChanged: (data)
-          {
+        {
           CustomSignUpButton.email = data;
           CustomLogInButton.email = data;
         },
         decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
             prefixIcon: const Icon(FontAwesomeIcons.userTie, color: Colors.black, size: 25),
-            label: Text('email', style: textStyleOfForm),
+            label: const Text('email', style: Styles.textStyleOfForm),
             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
 
             focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25)

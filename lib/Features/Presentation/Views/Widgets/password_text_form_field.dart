@@ -1,13 +1,13 @@
 import 'package:awesome_icons/awesome_icons.dart';
 import 'package:flutter/material.dart';
+import '../../../../Core/Utils/styles.dart';
 import 'custom_log_in_button.dart';
 import 'custom_sign_up_button.dart';
 
 class PasswordTextFormField extends StatefulWidget
 {
-  const PasswordTextFormField({super.key, required this.obscure, required this.textStyleOfForm});
+  const PasswordTextFormField({super.key, required this.obscure,});
   final bool obscure;
-  final TextStyle textStyleOfForm;
 
   @override
   State<PasswordTextFormField> createState() => _PasswordTextFormFieldState();
@@ -46,7 +46,7 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField>
         decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
             prefixIcon: const Icon(FontAwesomeIcons.lock, color: Colors.black, size: 25),
-            label: Text('password', style: widget.textStyleOfForm),
+            label: const Text('password', style: Styles.textStyleOfForm),
 
             suffixIcon: IconButton(
                 onPressed: ()
