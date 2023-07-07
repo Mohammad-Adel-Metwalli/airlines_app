@@ -21,8 +21,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody>
   void didChangeDependencies()
   {
     super.didChangeDependencies();
-    precacheImage(const AssetImage('Assets/Images/Flight-wings.jpg'), context);
-    precacheImage(const AssetImage('Assets/Images/wepik-modern-sunshine-travel-agency-logo-202306280150418lcW.png'), context);
+    precacheImage(const AssetImage('Assets/Images/dddepth-057.jpg'), context);
   }
 
   @override
@@ -30,7 +29,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody>
   {
     return Stack(
       children: [
-        const SignAuthenticationViewBackGroundImage(image: 'Assets/Images/Flight-wings.jpg'),
+        const SignAuthenticationViewBackGroundImage(image: 'Assets/Images/dddepth-057.jpg'),
 
         SingleChildScrollView(
           child: Column(
