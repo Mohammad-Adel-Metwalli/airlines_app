@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'home_view_body_column_items.dart';
 
-class HomeViewBodyItems extends StatelessWidget
+class HomeViewBodyItems extends StatefulWidget
 {
   const HomeViewBodyItems({super.key});
 
+  @override
+  State<HomeViewBodyItems> createState() => _HomeViewBodyItemsState();
+}
+
+class _HomeViewBodyItemsState extends State<HomeViewBodyItems>
+{
   @override
   Widget build(BuildContext context)
 {

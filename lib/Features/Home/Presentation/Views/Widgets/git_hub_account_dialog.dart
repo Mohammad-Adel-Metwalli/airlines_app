@@ -1,6 +1,6 @@
 import 'package:avatar_glow/avatar_glow.dart';
-import 'package:awesome_icons/awesome_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import '../../../../../constants.dart';
 
 class GitHubAccountDialog extends StatelessWidget
@@ -12,19 +12,23 @@ class GitHubAccountDialog extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return const AvatarGlow(
+    return AvatarGlow(
       glowColor: Constants.carmine,
       endRadius: 32,
       child: Material(
         elevation: 8.0,
-        shape: CircleBorder(),
+        shape: const CircleBorder(),
         child: CircleAvatar(
           backgroundColor: Constants.carmine,
-          radius: 26,
+          radius: 30,
           child: CircleAvatar(
             backgroundColor: Constants.babyPowder,
-            radius: 20,
-            child: Icon(FontAwesomeIcons.github, color: Constants.majorelleBlue, size: 26),
+            radius: 24,
+            child: Lottie.asset(
+                'Assets/animations/GitHub animation 3.json',
+                height: 100,
+                animate: true
+            ),
           ),
         ),
       ),
