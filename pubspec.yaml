@@ -24,6 +24,8 @@ dependencies:
   scroll_snap_list: ^0.9.1
   avatar_glow: ^2.0.2
   smooth_page_indicator: ^1.1.0
+  shimmer: ^3.0.0
+  url_launcher: ^6.1.12
 
 dev_dependencies:
   flutter_test:

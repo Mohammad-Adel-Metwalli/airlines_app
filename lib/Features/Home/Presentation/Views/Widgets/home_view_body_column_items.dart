@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'offers_list_view.dart';
+import 'offers_text.dart';
 
 class HomeViewBodyColumnItems extends StatefulWidget
 {
@@ -14,9 +15,14 @@ class _HomeViewBodyColumnItemsState extends State<HomeViewBodyColumnItems>
   @override
   Widget build(BuildContext context)
   {
-    return const Column(
+    return Column(
       children: [
-        OffersListView(),
+        const OffersText(),
+
+        SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),
+
+        const OffersListView(),
+
 
       ],
     );

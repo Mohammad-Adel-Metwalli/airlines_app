@@ -9,4 +9,9 @@ class Constants
   static const lightApricot = Color(0xffffcf67);
   static const navyBlue = Color(0xff150578);
   static const majorelleBlue = Color(0xff623CEA);
+  static const linkedInColor = Color(0xFF00A1EE);
+  static const almond = Color(0xffF1E3D3);
+  static const internationalKleinBlue = Color(0xff05299E);
+  static const brown = Color(0xffA44200);
+  static const green = Color(0xff38b000);
 }

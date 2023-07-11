@@ -15,7 +15,7 @@ class _HomeViewBodyItemsState extends State<HomeViewBodyItems>
   Widget build(BuildContext context)
 {
     return SingleChildScrollView(
-      padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height * 0.115),
+      padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height * 0.150),
       physics: const BouncingScrollPhysics(),
       child: const Center(child: HomeViewBodyColumnItems())
     );

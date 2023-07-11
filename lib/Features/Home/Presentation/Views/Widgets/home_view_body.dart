@@ -1,3 +1,4 @@
+import 'package:airlines_app/Features/Home/Presentation/Views/Widgets/shimmer_view_body_items.dart';
 import 'package:flutter/material.dart';
 import 'custom_home_app_bar.dart';
 import 'home_view_background_image.dart';
@@ -13,18 +14,40 @@ class HomeViewBody extends StatefulWidget
 
 class _HomeViewBodyState extends State<HomeViewBody>
 {
+  bool isLoading = false;
+  @override
+  void initState()
+  {
+    super.initState();
+    shimmerLoading();
+  }
+
+  @override
+  void didChangeDependencies()
+  {
+    super.didChangeDependencies();
+    precacheImage(const AssetImage('Assets/Images/github.png'), context);
+    precacheImage(const AssetImage('Assets/Images/LinkedIn.png'), context);
+    precacheImage(const AssetImage('Assets/Images/Mohammad Adel Metwalli(GitHub).jpeg'), context);
+  }
+
+  void shimmerLoading()
+  {
+    Future.delayed(const Duration(seconds: 4), () => setState(() => isLoading = true));
+  }
+
   @override
   Widget build(BuildContext context)
   {
-    return const Stack(
+    return Stack(
       children: [
-        HomeViewBackgroundImage(),
+        const HomeViewBackgroundImage(),
 
         Stack(
           children: [
-            HomeViewBodyItems(),
+            isLoading == false ? const ShimmerViewBodyItems() : const HomeViewBodyItems(),
 
-            CustomHomeAppBar()
+            const CustomHomeAppBar()
           ],
         ),
       ],

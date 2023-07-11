@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../../../../../constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'git_hub_account_dialog.dart';
+import 'account_information.dart';
+import 'account_dialog.dart';
 
 class CustomHomeAppBarBodyItems extends StatelessWidget
 {
@@ -39,17 +39,19 @@ class CustomHomeAppBarBodyItems extends StatelessWidget
             {
               return Dialog(
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-
+                backgroundColor: Constants.almond,
                 child: SizedBox(
-                    height: MediaQuery.sizeOf(context).height * 0.2,
+                    height: MediaQuery.sizeOf(context).height * 0.4,
                     width: MediaQuery.sizeOf(context).width * 0.2,
-                    child: const Center(child: Text('Hola'))
+                    child: const Center(
+                        child: AccountInformation()
+                    )
                 ),
               );
             });
           },
           
-          child: const GitHubAccountDialog(),
+          child: const AccountDialog(),
         ),
 
         SizedBox(width: MediaQuery.sizeOf(context).width * 0.01)

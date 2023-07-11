@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../../../../../constants.dart';
 
-class GitHubAccountDialog extends StatelessWidget
+class AccountDialog extends StatelessWidget
 {
-  const GitHubAccountDialog({
+  const AccountDialog({
     super.key,
   });
 
@@ -25,7 +25,7 @@ class GitHubAccountDialog extends StatelessWidget
             backgroundColor: Constants.babyPowder,
             radius: 24,
             child: Lottie.asset(
-                'Assets/animations/GitHub animation 3.json',
+                'Assets/animations/hacker-found-solution.json',
                 height: 100,
                 animate: true
             ),

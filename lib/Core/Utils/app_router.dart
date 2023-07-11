@@ -14,6 +14,18 @@ abstract class AppRouter
             pageBuilder: (context, state)
             {
               return CustomTransitionPage(
+                key: state.pageKey,
+                child: const SplashView(),
+                transitionsBuilder: (context, animation, secondaryAnimation, child)
+                {
+                  return FadeTransition(
+                      opacity: CurveTween(curve: Curves.bounceInOut).animate(animation),
+                      child: child
+                  );
+                });
+
+
+              /*return CustomTransitionPage(
                   key: state.pageKey,
                   child: const SignInView(),
                   transitionsBuilder: (context, animation, secondaryAnimation, child)
@@ -22,7 +34,7 @@ abstract class AppRouter
                     opacity: CurveTween(curve: Curves.bounceInOut).animate(animation),
                     child: child
                     );
-                  });
+                  });*/
             }
         ),
 
