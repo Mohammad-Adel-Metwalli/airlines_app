@@ -7,4 +7,6 @@ abstract class Styles
   static const textStyleOfForm = TextStyle(fontSize: 15, color: Constants.carmine);
   static const textStyleOfFormButton = TextStyle(fontSize: 20, color: Constants.babyPowder);
   static const textStyleOfHomeAppBar = TextStyle(color: Constants.carmine, fontSize: 20, fontWeight: FontWeight.bold);
+  static const textOfDining = TextStyle(fontWeight: FontWeight.bold, color: Constants.navyBlue, fontSize: 15);
+  static const textOfDiningImage = TextStyle(fontWeight: FontWeight.bold, color: Constants.babyPowder, fontSize: 20);
 }

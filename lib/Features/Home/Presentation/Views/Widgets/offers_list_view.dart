@@ -32,7 +32,7 @@ class _OffersListViewState extends State<OffersListView>
     return Column(
       children: [
         SizedBox(
-          height: MediaQuery.sizeOf(context).height * .3,
+          height: MediaQuery.sizeOf(context).height * .4,
           child: ScrollSnapList(
             scrollPhysics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,

@@ -17,7 +17,7 @@ class FailureAnimationDialog extends StatelessWidget
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
         backgroundColor: Constants.lightYellow,
         child: SizedBox(
-          height: MediaQuery.sizeOf(context).height * 0.25,
+          height: MediaQuery.sizeOf(context).height * 0.3,
           child: Column(
             children: [
               const Spacer(),

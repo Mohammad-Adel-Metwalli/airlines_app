@@ -14,4 +14,5 @@ class Constants
   static const internationalKleinBlue = Color(0xff05299E);
   static const brown = Color(0xffA44200);
   static const green = Color(0xff38b000);
+  static const night = Color(0xff000F08);
 }
