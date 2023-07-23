@@ -16,7 +16,7 @@ class OffersListView extends StatefulWidget
 
 class _OffersListViewState extends State<OffersListView>
 {
-  int activeIndex = 0;
+  int activeIndex = 2;
 
   void onItemFocus(int index)
   {
@@ -38,6 +38,7 @@ class _OffersListViewState extends State<OffersListView>
             scrollDirection: Axis.horizontal,
             itemCount: AssetsData.planesImages.length,
             dynamicItemSize: true,
+            initialIndex: 2,
 
             itemBuilder: (context, index)
             {

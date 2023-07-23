@@ -2,11 +2,12 @@ import 'package:airlines_app/Features/Home/Presentation/Views/Widgets/custom_hor
 import 'package:flutter/material.dart';
 import '../../../../../Core/Utils/styles.dart';
 
-class AirlinesExperienceText extends StatelessWidget
+class CustomHomeText extends StatelessWidget
 {
-  const AirlinesExperienceText({
-    super.key,
+  const CustomHomeText({
+    super.key, required this.textOfHome,
   });
+  final String textOfHome;
 
   @override
   Widget build(BuildContext context)
@@ -19,7 +20,7 @@ class AirlinesExperienceText extends StatelessWidget
 
         SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
 
-        const Text('THE AIRLINES EXPERIENCE', style: Styles.textOfDining, textAlign: TextAlign.center),
+        Text(textOfHome, style: Styles.textOfDining, textAlign: TextAlign.center),
 
         SizedBox(width: MediaQuery.sizeOf(context).width * 0.01),
 

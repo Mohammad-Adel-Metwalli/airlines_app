@@ -11,7 +11,7 @@ class ClassesSummaryListView extends StatelessWidget
   Widget build(BuildContext context)
   {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .8,
+      height: MediaQuery.sizeOf(context).height * .55,
       child: ScrollSnapList(
           scrollPhysics: const BouncingScrollPhysics(),
           dynamicItemSize: true,

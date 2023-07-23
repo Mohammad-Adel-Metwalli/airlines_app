@@ -24,4 +24,12 @@ class AssetsData
     'First Class',
     'Shower Spa'
   ];
+
+  static final popularRoutesImages = [
+    'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpapercave.com%2Fwp%2FndgpU7n.jpg&f=1&nofb=1&ipt=9344eed5c94973ec61ef9084a0981b28292a60334bd827d2806305e917e07233&ipo=images',
+    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthecognate.com%2Fwp-content%2Fuploads%2F2021%2F01%2FMadina-scaled.jpg&f=1&nofb=1&ipt=f0af911aaeaa8fb752d35a7cb2f7cb3843bf55abe73e8004b3e237793cd0fd3d&ipo=images',
+    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.idgesg.net%2Fimages%2Farticle%2F2019%2F06%2Fcio_middle_east_uae_united_arab_emirates_dubai_skyline_cityscape_downtown_night_by_manjik_gettyimages-1035216626_2400x1600-100800419-large.jpg&f=1&nofb=1&ipt=90fc046fa42bf79d0959c0fe9d2a1b0060975eb5c0baa9d59e5f5bf9dd4b0e7d&ipo=images',
+    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.cnbcfm.com%2Fapi%2Fv1%2Fimage%2F106616793-1594805802117gettyimages-900809876.jpg%3Fv%3D1594864515&f=1&nofb=1&ipt=7a30a2ecd136f4f34ec77cd9f7248082c8e7022ca5fac794a9af5d36db164f68&ipo=images',
+    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.brightwaterholidays.com%2Fmedia%2F2068%2Ftirana_521354875.jpg%3Fcenter%3D0.52867830423940154%252C0.51166666666666671%26mode%3Dcrop%26heightRatio%3D1%3Fwidth%3D370%26quality%3D70&f=1&nofb=1&ipt=678093445e6d6391ff2e32e46e93ce00e70a71456c16cc92b6b17dcf76d66bf5&ipo=images'
+  ];
 }

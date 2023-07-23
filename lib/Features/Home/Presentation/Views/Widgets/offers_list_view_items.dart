@@ -1,4 +1,4 @@
-import 'package:airlines_app/Features/Home/Presentation/Views/Widgets/shimmer_offers_list_view_items.dart';
+import 'package:airlines_app/Features/Home/Presentation/Views/Widgets/shimmer_item.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +18,10 @@ class _OffersListViewItemsState extends State<OffersListViewItems>
   @override
   Widget build(BuildContext context)
   {
+    final double width = MediaQuery.sizeOf(context).width * 0.9;
+
     return SizedBox(
-      width: MediaQuery.sizeOf(context).width * 0.9,
+      width: width,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(25),
         child: CachedNetworkImage(
@@ -27,7 +29,7 @@ class _OffersListViewItemsState extends State<OffersListViewItems>
           height: MediaQuery.sizeOf(context).width * 0.3,
           width: MediaQuery.sizeOf(context).width * 0.5,
           fit: BoxFit.cover,
-          placeholder: (context, url) => const Center(child: ShimmerOffersListViewItems()),
+          placeholder: (context, url) => Center(child: ShimmerItem(widthOfShimmer: width, topLeft: 25, topRight: 25, bottomLeft: 25, bottomRight: 25)),
         ),
       ),
     );

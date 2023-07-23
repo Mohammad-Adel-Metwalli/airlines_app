@@ -15,14 +15,24 @@ abstract class AppRouter
             {
               return CustomTransitionPage(
                   key: state.pageKey,
-                  child: const SignInView(),
+                  child: const HomeView(),
                   transitionsBuilder: (context, animation, secondaryAnimation, child)
                   {
                     return FadeTransition(
-                    opacity: CurveTween(curve: Curves.bounceInOut).animate(animation),
-                    child: child
+                        opacity: CurveTween(curve: Curves.bounceInOut).animate(animation),
+                        child: child
                     );
                   });
+              // return CustomTransitionPage(
+              //     key: state.pageKey,
+              //     child: const SignInView(),
+              //     transitionsBuilder: (context, animation, secondaryAnimation, child)
+              //     {
+              //       return FadeTransition(
+              //           opacity: CurveTween(curve: Curves.bounceInOut).animate(animation),
+              //           child: child
+              //       );
+              //     });
             }
         ),
 
